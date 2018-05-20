@@ -1,0 +1,9 @@
+<launch>
+    <!-- RVIZ -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find obstacle_processor)/rviz/rviz_cfg.rviz"/>
+
+    <!-- obstacle_processor -->
+    <include file="$(find obstacle_processor)/launch/obstacle_processor.launch">
+        <arg name="rviz_out" default="true"/>
+    </include>
+</launch>

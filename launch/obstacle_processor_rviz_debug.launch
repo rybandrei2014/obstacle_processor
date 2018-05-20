@@ -1,0 +1,13 @@
+<launch>
+    <!-- rqt_bag -->
+    <node name="rqt_bag" pkg="rqt_bag" type="rqt_bag"/>
+
+    <!-- RVIZ -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find obstacle_processor)/rviz/rviz_cfg.rviz"/>
+
+    <!-- obstacle_processor -->
+    <include file="$(find obstacle_processor)/launch/obstacle_processor.launch">
+        <arg name="rviz_out" default="true"/>
+    </include>
+
+</launch>

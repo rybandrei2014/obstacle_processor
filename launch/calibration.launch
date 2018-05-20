@@ -1,0 +1,7 @@
+<launch>
+  <!-- kinect2_bridge -->
+  <include file="$(find kinect2_bridge)/launch/kinect2_bridge.launch"/>
+
+  <!-- calibration -->
+  <node pkg="obstacle_processor" name="calibration_node" type="calibration_node"/>
+</launch>

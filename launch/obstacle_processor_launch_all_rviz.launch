@@ -1,0 +1,12 @@
+<launch>
+  <!-- kinect2_bridge -->
+  <include file="$(find kinect2_bridge)/launch/kinect2_bridge.launch"/>
+
+  <!-- RVIZ -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find obstacle_processor)/rviz/rviz_cfg.rviz"/>
+
+  <!-- obstacle_processor -->
+  <include file="$(find obstacle_processor)/launch/obstacle_processor.launch">
+      <arg name="rviz_out" default="true"/>
+  </include>
+</launch>

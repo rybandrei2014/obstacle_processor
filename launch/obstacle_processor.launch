@@ -1,0 +1,57 @@
+<launch>
+  <arg name="pc_topic" default="/kinect2/qhd/points"/>
+  <arg name="min_z" default="0.0"/>
+  <arg name="max_z" default="2.7"/>
+  <arg name="iter" default="500"/>
+  <arg name="voxel_size" default="0.012"/>
+  <arg name="cluster_tol" default="0.04"/>
+  <arg name="min_cluster" default="30"/>
+  <arg name="max_cluster" default="50000"/>
+  <arg name="plane_seg_thresh" default="0.024"/>
+  <arg name="meanK" default="5"/>
+  <arg name="outliers_thresh" default="2.2"/>
+  <arg name="point_min_z" default="-0.1"/>
+  <arg name="point_max_z" default="0.015"/>
+  <arg name="dist_weight" default="0.015"/>
+  <arg name="iter2" default="150"/>
+  <arg name="thresh2" default="0.015"/>
+  <arg name="K_search" default="30"/>
+  <arg name="tolerance" default="15.0"/>
+  <arg name="rviz_out" default="false"/>
+  <arg name="cmd_out" default="true"/>
+  <arg name="transform_to_base_link" default="true"/>
+  <arg name="dist_weight_circ" default="0.05"/>
+  <arg name="dist_thresh_circ" default="0.017"/>
+  <arg name="height_thresh_min" default="0.0"/>
+  <arg name="height_thresh_max" default="0.035"/>
+  <arg name="iter_circ" default="100"/>
+
+  <node pkg="obstacle_processor" name="obstacle_processor_node" type="obstacle_processor_node" launch-prefix="xterm -e gdb --args">
+    <param name="pc_topic" type="string" value="$(arg pc_topic)"/>
+    <param name="min_z" type="double" value="$(arg min_z)"/>
+    <param name="max_z" type="double" value="$(arg max_z)"/>
+    <param name="iter" type="int" value="$(arg iter)"/>
+    <param name="voxel_size" type="double" value="$(arg voxel_size)"/>
+    <param name="cluster_tol" type="double" value="$(arg cluster_tol)"/>
+    <param name="min_cluster" type="int" value="$(arg min_cluster)"/>
+    <param name="max_cluster" type="int" value="$(arg max_cluster)"/>
+    <param name="plane_seg_thresh" type="double" value="$(arg plane_seg_thresh)"/>
+    <param name="meanK" type="int" value="$(arg meanK)"/>
+    <param name="outliers_thresh" type="double" value="$(arg outliers_thresh)"/>
+    <param name="point_min_z" type="double" value="$(arg point_min_z)"/>
+    <param name="point_max_z" type="double" value="$(arg point_max_z)"/>
+    <param name="dist_weight" type="double" value="$(arg dist_weight)"/>
+    <param name="iter2" type="int" value="$(arg iter2)"/>
+    <param name="thresh2" type="double" value="$(arg thresh2)"/>
+    <param name="tolerance" type="double" value="$(arg tolerance)"/>
+    <param name="K_search" type="int" value="$(arg K_search)"/>
+    <param name="rviz_out" type="bool" value="$(arg rviz_out)"/>
+    <param name="cmd_out" type="bool" value="$(arg cmd_out)"/>
+    <param name="transform_to_base_link" type="bool" value="$(arg transform_to_base_link)"/>
+    <param name="dist_weight_circ" type="double" value="$(arg dist_weight_circ)"/>
+    <param name="dist_thresh_circ" type="double" value="$(arg dist_thresh_circ)"/>
+    <param name="height_thresh_min" type="double" value="$(arg height_thresh_min)"/>
+    <param name="height_thresh_max" type="double" value="$(arg height_thresh_max)"/>
+    <param name="iter_circ" type="int" value="$(arg iter_circ)"/>
+  </node>
+</launch>
