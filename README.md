@@ -16,7 +16,7 @@ catkin_make
 ```bash
 source catkin_ws/devel/setup.bash
 ```
-* Setup your robot platform on a ground and remove the all objects before it for calibration purposes and run calibration node
+* Setup your robot platform on a ground and remove the all objects in front of it for calibration purposes and run calibration node
 ```bash
 roslaunch obstacle_processor calibration.launch
 ```
