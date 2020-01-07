@@ -40,3 +40,13 @@ or
 ```bash
 roslaunch obstacle_processor obstacle_processor_launch_all_rviz.launch
 ```
+
+## References
+The project was done as a part of research during <a href="https://www.vutbr.cz/www_base/zav_prace_soubor_verejne.php?file_id=172947">bachelor thesis</a>
+### License
+MIT
+### Citation
+If you use the repo in personal projects, research, please cite it as follows:
+**RYBIN, A. Detekce překážek za použití kamerového 3D skeneru. Brno: Vysoké učení technické v Brně, Fakulta strojního inženýrství, 2018.**
+
+Copyright © 2017 Andrei Rybin
